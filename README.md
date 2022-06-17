@@ -4,11 +4,12 @@
 
 > Trajectory-guided Control Prediction for End-to-end Autonomous Driving: A Simple yet Strong Baseline  
 > Penghao Wu, Xiaosong Jia*, Li Chen*, Junchi Yan, Hongyang Li, Yu Qiao    
-> [arXiv]()
+> [arXiv](https://arxiv.org/abs/2206.08129)
 
-TODO: badger from paperwithcode
+	
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/trajectory-guided-control-prediction-for-end/autonomous-driving-on-carla-leaderboard)](https://paperswithcode.com/sota/autonomous-driving-on-carla-leaderboard?p=trajectory-guided-control-prediction-for-end)
 
-This repository contains the code for the paper [Trajectory-guided Control Prediction for End-to-end Autonomous Driving: A Simple yet Strong Baseline](). **We will release the code and dataset around Sept.**
+This repository contains the code for the paper [Trajectory-guided Control Prediction for End-to-end Autonomous Driving: A Simple yet Strong Baseline](https://arxiv.org/abs/2206.08129). **We will release the code and dataset around Sept.**
 
 
 TCP is a simple unified framework to combine trajectory and control prediction for end-to-end autonomous driving.  By time of release in June 17 2022, our method achieves new state-of-the-art on [CARLA AD Leaderboard](https://leaderboard.carla.org/leaderboard/), in which we rank the **first** in terms of the Driving Score and Infraction Penalty using only a single camera as input. 
@@ -18,7 +19,12 @@ TCP is a simple unified framework to combine trajectory and control prediction f
 If you find our repo or our paper useful, please use the following citation:
 
 ```
-TODO
+@article{wu2022trajectoryguided,
+ title={Trajectory-guided Control Prediction for End-to-end Autonomous Driving: A Simple yet Strong Baseline}, 
+ author={Penghao Wu and Xiaosong Jia and Li Chen and Junchi Yan and Hongyang Li and Yu Qiao},
+ journal={arXiv preprint arXiv:2206.08129},
+ year={2022},
+}
 ```
 
 ## License
