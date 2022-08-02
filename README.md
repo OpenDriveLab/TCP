@@ -4,7 +4,8 @@
 
 > Trajectory-guided Control Prediction for End-to-end Autonomous Driving: A Simple yet Strong Baseline  
 > Penghao Wu*, [Xiaosong Jia*](https://jiaxiaosong1002.github.io/), Li Chen*, [Junchi Yan](https://thinklab.sjtu.edu.cn/), [Hongyang Li](https://lihongyang.info/), [Yu Qiao](http://mmlab.siat.ac.cn/yuqiao/)    
->  - [arXiv](https://arxiv.org/abs/2206.08129)
+>  - [arXiv Paper](https://arxiv.org/abs/2206.08129)
+>  - [Blog in Chinese](https://zhuanlan.zhihu.com/p/532665469)
 
 	
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/trajectory-guided-control-prediction-for-end/autonomous-driving-on-carla-leaderboard)](https://paperswithcode.com/sota/autonomous-driving-on-carla-leaderboard?p=trajectory-guided-control-prediction-for-end)
