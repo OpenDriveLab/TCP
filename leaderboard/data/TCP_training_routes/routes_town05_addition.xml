@@ -1,0 +1,483 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<routes>
+  <route id="0" town="Town05">
+    <weather id="ClearNight" cloudiness="15.000000" precipitation="0.000000" precipitation_deposits="0.000000" wind_intensity="0.350000" sun_azimuth_angle="0.000000" sun_altitude_angle="-80.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="26.081230" y="-80.356750" z="0.0" pitch="0.0" roll="0.0" yaw="91.532074"/>
+      <waypoint x="-54.532162" y="106.233673" z="0.0" pitch="0.0" roll="0.0" yaw="90.379295"/>
+    </weather>
+  </route>
+  <route id="1" town="Town05">
+    <weather id="WetCloudyNight" cloudiness="90.000000" precipitation="0.000000" precipitation_deposits="50.000000" wind_intensity="0.350000" sun_azimuth_angle="225.000000" sun_altitude_angle="-80.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="-188.061401" y="35.195248" z="0.0" pitch="0.0" roll="0.0" yaw="-90.015793"/>
+      <waypoint x="-39.607834" y="-84.453461" z="0.0" pitch="0.0" roll="0.0" yaw="0.086304"/>
+    </weather>
+  </route>
+  <route id="2" town="Town05">
+    <weather id="HardRainNoon" cloudiness="90.000000" precipitation="60.000000" precipitation_deposits="100.000000" wind_intensity="1.000000" sun_azimuth_angle="90.000000" sun_altitude_angle="75.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="-49.184319" y="-85.226318" z="0.0" pitch="0.0" roll="0.0" yaw="122.681595"/>
+      <waypoint x="-115.318710" y="142.794678" z="0.0" pitch="0.0" roll="0.0" yaw="202.778366"/>
+    </weather>
+  </route>
+  <route id="3" town="Town05">
+    <weather id="MidRainyNoon" cloudiness="80.000000" precipitation="30.000000" precipitation_deposits="50.000000" wind_intensity="0.400000" sun_azimuth_angle="0.000000" sun_altitude_angle="75.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="-129.153900" y="-92.330452" z="0.0" pitch="0.0" roll="0.0" yaw="-39.756348"/>
+      <waypoint x="38.759605" y="-87.491234" z="0.0" pitch="0.0" roll="0.0" yaw="-0.613525"/>
+    </weather>
+  </route>
+  <route id="4" town="Town05">
+    <weather id="SoftRainNight" cloudiness="90.000000" precipitation="15.000000" precipitation_deposits="50.000000" wind_intensity="0.350000" sun_azimuth_angle="270.000000" sun_altitude_angle="-80.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="-51.146019" y="-30.647259" z="0.0" pitch="0.0" roll="0.0" yaw="89.662506"/>
+      <waypoint x="34.908623" y="-14.090075" z="0.0" pitch="0.0" roll="0.0" yaw="270.403290"/>
+    </weather>
+  </route>
+  <route id="5" town="Town05">
+    <weather id="MidRainyNight" cloudiness="80.000000" precipitation="30.000000" precipitation_deposits="50.000000" wind_intensity="0.400000" sun_azimuth_angle="225.000000" sun_altitude_angle="-80.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="-165.222885" y="-145.713760" z="0.0" pitch="0.0" roll="0.0" yaw="531.696411"/>
+      <waypoint x="-74.257477" y="-135.043930" z="0.0" pitch="0.0" roll="0.0" yaw="24.509783"/>
+    </weather>
+  </route>
+  <route id="6" town="Town05">
+    <weather id="WetCloudyNight" cloudiness="90.000000" precipitation="0.000000" precipitation_deposits="50.000000" wind_intensity="0.350000" sun_azimuth_angle="225.000000" sun_altitude_angle="-80.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="31.562237" y="124.717712" z="0.0" pitch="0.0" roll="0.0" yaw="-89.977104"/>
+      <waypoint x="96.501617" y="-37.224007" z="0.0" pitch="0.0" roll="0.0" yaw="90.169296"/>
+    </weather>
+  </route>
+  <route id="7" town="Town05">
+    <weather id="HardRainNight" cloudiness="90.000000" precipitation="60.000000" precipitation_deposits="100.000000" wind_intensity="1.000000" sun_azimuth_angle="225.000000" sun_altitude_angle="-80.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="-197.102325" y="-83.238190" z="0.0" pitch="0.0" roll="0.0" yaw="41.821503"/>
+      <waypoint x="-48.371574" y="-104.916473" z="0.0" pitch="0.0" roll="0.0" yaw="-97.028809"/>
+    </weather>
+  </route>
+  <route id="8" town="Town05">
+    <weather id="MidRainSunset" cloudiness="80.000000" precipitation="30.000000" precipitation_deposits="50.000000" wind_intensity="0.400000" sun_azimuth_angle="270.000000" sun_altitude_angle="15.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="-44.031597" y="106.183510" z="0.0" pitch="0.0" roll="0.0" yaw="270.379303"/>
+      <waypoint x="-171.156647" y="6.465941" z="0.0" pitch="0.0" roll="0.0" yaw="359.860535"/>
+    </weather>
+  </route>
+  <route id="9" town="Town05">
+    <weather id="WetCloudyNoon" cloudiness="90.000000" precipitation="0.000000" precipitation_deposits="50.000000" wind_intensity="0.350000" sun_azimuth_angle="180.000000" sun_altitude_angle="75.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="-127.903435" y="35.925026" z="0.0" pitch="0.0" roll="0.0" yaw="89.488609"/>
+      <waypoint x="45.682407" y="92.028603" z="0.0" pitch="0.0" roll="0.0" yaw="-0.416168"/>
+    </weather>
+  </route>
+  <route id="10" town="Town05">
+    <weather id="SoftRainNoon" cloudiness="90.000000" precipitation="15.000000" precipitation_deposits="50.000000" wind_intensity="0.350000" sun_azimuth_angle="315.000000" sun_altitude_angle="75.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="-198.921234" y="-95.545326" z="0.0" pitch="0.0" roll="0.0" yaw="-200.383698"/>
+      <waypoint x="-91.736862" y="6.272629" z="0.0" pitch="0.0" roll="0.0" yaw="359.860535"/>
+    </weather>
+  </route>
+  <route id="11" town="Town05">
+    <weather id="WetCloudyNoon" cloudiness="90.000000" precipitation="0.000000" precipitation_deposits="50.000000" wind_intensity="0.350000" sun_azimuth_angle="180.000000" sun_altitude_angle="75.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="103.394730" y="-1.155365" z="0.0" pitch="0.0" roll="0.0" yaw="-89.763161"/>
+      <waypoint x="-10.681975" y="91.554466" z="0.0" pitch="0.0" roll="0.0" yaw="0.065567"/>
+    </weather>
+  </route>
+  <route id="12" town="Town05">
+    <weather id="ClearSunset" cloudiness="15.000000" precipitation="0.000000" precipitation_deposits="0.000000" wind_intensity="0.350000" sun_azimuth_angle="45.000000" sun_altitude_angle="15.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="-195.082565" y="-41.582809" z="0.0" pitch="0.0" roll="0.0" yaw="89.984207"/>
+      <waypoint x="-146.271057" y="151.024811" z="0.0" pitch="0.0" roll="0.0" yaw="0.269714"/>
+    </weather>
+  </route>
+  <route id="13" town="Town05">
+    <weather id="HardRainSunset" cloudiness="80.000000" precipitation="60.000000" precipitation_deposits="100.000000" wind_intensity="1.000000" sun_azimuth_angle="0.000000" sun_altitude_angle="15.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="-121.489883" y="-28.840134" z="0.0" pitch="0.0" roll="0.0" yaw="270.393555"/>
+      <waypoint x="-265.144501" y="-19.160192" z="0.0" pitch="0.0" roll="0.0" yaw="270.416779"/>
+    </weather>
+  </route>
+  <route id="14" town="Town05">
+    <weather id="WetCloudyNoon" cloudiness="90.000000" precipitation="0.000000" precipitation_deposits="50.000000" wind_intensity="0.350000" sun_azimuth_angle="180.000000" sun_altitude_angle="75.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="-195.055328" y="57.197193" z="0.0" pitch="0.0" roll="0.0" yaw="89.984207"/>
+      <waypoint x="-120.281761" y="144.147079" z="0.0" pitch="0.0" roll="0.0" yaw="-179.730286"/>
+    </weather>
+  </route>
+  <route id="15" town="Town05">
+    <weather id="MidRainyNight" cloudiness="80.000000" precipitation="30.000000" precipitation_deposits="50.000000" wind_intensity="0.400000" sun_azimuth_angle="225.000000" sun_altitude_angle="-80.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="197.058105" y="11.637555" z="0.0" pitch="0.0" roll="0.0" yaw="90.322067"/>
+      <waypoint x="136.051163" y="180.476059" z="0.0" pitch="0.0" roll="0.0" yaw="156.157990"/>
+    </weather>
+  </route>
+  <route id="16" town="Town05">
+    <weather id="WetCloudySunset" cloudiness="90.000000" precipitation="0.000000" precipitation_deposits="50.000000" wind_intensity="0.350000" sun_azimuth_angle="0.000000" sun_altitude_angle="15.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="-191.546265" y="90.106232" z="0.0" pitch="0.0" roll="0.0" yaw="-270.015778"/>
+      <waypoint x="-179.816284" y="-91.468208" z="0.0" pitch="0.0" roll="0.0" yaw="-189.058701"/>
+    </weather>
+  </route>
+  <route id="17" town="Town05">
+    <weather id="HardRainSunset" cloudiness="80.000000" precipitation="60.000000" precipitation_deposits="100.000000" wind_intensity="1.000000" sun_azimuth_angle="0.000000" sun_altitude_angle="15.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="31.590002" y="55.217716" z="0.0" pitch="0.0" roll="0.0" yaw="-89.977104"/>
+      <waypoint x="69.027390" y="5.364887" z="0.0" pitch="0.0" roll="0.0" yaw="0.250275"/>
+    </weather>
+  </route>
+  <route id="18" town="Town05">
+    <weather id="MidRainyNoon" cloudiness="80.000000" precipitation="30.000000" precipitation_deposits="50.000000" wind_intensity="0.400000" sun_azimuth_angle="0.000000" sun_altitude_angle="75.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="-53.602551" y="-87.974541" z="0.0" pitch="0.0" roll="0.0" yaw="0.086304"/>
+      <waypoint x="69.404785" y="-193.747162" z="0.0" pitch="0.0" roll="0.0" yaw="359.757080"/>
+    </weather>
+  </route>
+  <route id="19" town="Town05">
+    <weather id="CloudySunset" cloudiness="80.000000" precipitation="0.000000" precipitation_deposits="0.000000" wind_intensity="0.350000" sun_azimuth_angle="270.000000" sun_altitude_angle="15.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="51.073429" y="-5.213636" z="0.0" pitch="0.0" roll="0.0" yaw="-179.749725"/>
+      <waypoint x="28.042784" y="173.406311" z="0.0" pitch="0.0" roll="0.0" yaw="90.022896"/>
+    </weather>
+  </route>
+  <route id="20" town="Town05">
+    <weather id="ClearSunset" cloudiness="15.000000" precipitation="0.000000" precipitation_deposits="0.000000" wind_intensity="0.350000" sun_azimuth_angle="45.000000" sun_altitude_angle="15.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="-45.494572" y="88.393860" z="0.0" pitch="0.0" roll="0.0" yaw="-321.002075"/>
+      <waypoint x="99.358940" y="44.066765" z="0.0" pitch="0.0" roll="0.0" yaw="90.699165"/>
+    </weather>
+  </route>
+  <route id="21" town="Town05">
+    <weather id="ClearSunset" cloudiness="15.000000" precipitation="0.000000" precipitation_deposits="0.000000" wind_intensity="0.350000" sun_azimuth_angle="45.000000" sun_altitude_angle="15.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="-47.374687" y="82.470535" z="0.0" pitch="0.0" roll="0.0" yaw="-89.620697"/>
+      <waypoint x="-44.375519" y="2.657339" z="0.0" pitch="0.0" roll="0.0" yaw="359.860535"/>
+    </weather>
+  </route>
+  <route id="22" town="Town05">
+    <weather id="SoftRainNight" cloudiness="90.000000" precipitation="15.000000" precipitation_deposits="50.000000" wind_intensity="0.350000" sun_azimuth_angle="270.000000" sun_altitude_angle="-80.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="23.738655" y="0.213850" z="0.0" pitch="0.0" roll="0.0" yaw="204.326477"/>
+      <waypoint x="33.863983" y="-109.529091" z="0.0" pitch="0.0" roll="0.0" yaw="271.532074"/>
+    </weather>
+  </route>
+  <route id="23" town="Town05">
+    <weather id="WetCloudySunset" cloudiness="90.000000" precipitation="0.000000" precipitation_deposits="50.000000" wind_intensity="0.350000" sun_azimuth_angle="0.000000" sun_altitude_angle="15.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="-87.762436" y="-4.237075" z="0.0" pitch="0.0" roll="0.0" yaw="179.860535"/>
+      <waypoint x="-188.092407" y="-77.274734" z="0.0" pitch="0.0" roll="0.0" yaw="-450.015778"/>
+    </weather>
+  </route>
+  <route id="24" town="Town05">
+    <weather id="HardRainNight" cloudiness="90.000000" precipitation="60.000000" precipitation_deposits="100.000000" wind_intensity="1.000000" sun_azimuth_angle="225.000000" sun_altitude_angle="-80.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="-201.557617" y="-84.697403" z="0.0" pitch="0.0" roll="0.0" yaw="-359.913696"/>
+      <waypoint x="-44.052963" y="-14.870444" z="0.0" pitch="0.0" roll="0.0" yaw="269.662506"/>
+    </weather>
+  </route>
+  <route id="25" town="Town05">
+    <weather id="HardRainSunset" cloudiness="80.000000" precipitation="60.000000" precipitation_deposits="100.000000" wind_intensity="1.000000" sun_azimuth_angle="0.000000" sun_altitude_angle="15.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="154.969086" y="-56.157448" z="0.0" pitch="0.0" roll="0.0" yaw="269.947418"/>
+      <waypoint x="44.953156" y="-186.050171" z="0.0" pitch="0.0" roll="0.0" yaw="-21.401505"/>
+    </weather>
+  </route>
+  <route id="26" town="Town05">
+    <weather id="ClearSunset" cloudiness="15.000000" precipitation="0.000000" precipitation_deposits="0.000000" wind_intensity="0.350000" sun_azimuth_angle="45.000000" sun_altitude_angle="15.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="-43.967445" y="96.493401" z="0.0" pitch="0.0" roll="0.0" yaw="-89.620697"/>
+      <waypoint x="24.555437" y="141.734924" z="0.0" pitch="0.0" roll="0.0" yaw="90.022896"/>
+    </weather>
+  </route>
+  <route id="27" town="Town05">
+    <weather id="WetCloudyNoon" cloudiness="90.000000" precipitation="0.000000" precipitation_deposits="50.000000" wind_intensity="0.350000" sun_azimuth_angle="180.000000" sun_altitude_angle="75.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="-189.302139" y="-3.989923" z="0.0" pitch="0.0" roll="0.0" yaw="179.860535"/>
+      <waypoint x="-185.726425" y="-122.427322" z="0.0" pitch="0.0" roll="0.0" yaw="293.804047"/>
+    </weather>
+  </route>
+  <route id="28" town="Town05">
+    <weather id="WetSunset" cloudiness="20.000000" precipitation="0.000000" precipitation_deposits="50.000000" wind_intensity="0.350000" sun_azimuth_angle="270.000000" sun_altitude_angle="15.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="43.240421" y="187.781784" z="0.0" pitch="0.0" roll="0.0" yaw="180.287811"/>
+      <waypoint x="-51.664944" y="191.085419" z="0.0" pitch="0.0" roll="0.0" yaw="179.971283"/>
+    </weather>
+  </route>
+  <route id="29" town="Town05">
+    <weather id="MidRainyNight" cloudiness="80.000000" precipitation="30.000000" precipitation_deposits="50.000000" wind_intensity="0.400000" sun_azimuth_angle="225.000000" sun_altitude_angle="-80.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="-123.818703" y="140.893448" z="0.0" pitch="0.0" roll="0.0" yaw="-76.694489"/>
+      <waypoint x="-124.409019" y="-113.416618" z="0.0" pitch="0.0" roll="0.0" yaw="270.393555"/>
+    </weather>
+  </route>
+  <route id="30" town="Town05">
+    <weather id="SoftRainNight" cloudiness="90.000000" precipitation="15.000000" precipitation_deposits="50.000000" wind_intensity="0.350000" sun_azimuth_angle="270.000000" sun_altitude_angle="-80.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="-268.412659" y="-51.046169" z="0.0" pitch="0.0" roll="0.0" yaw="270.416779"/>
+      <waypoint x="-183.552383" y="-88.170280" z="0.0" pitch="0.0" roll="0.0" yaw="-359.913696"/>
+    </weather>
+  </route>
+  <route id="31" town="Town05">
+    <weather id="WetCloudySunset" cloudiness="90.000000" precipitation="0.000000" precipitation_deposits="50.000000" wind_intensity="0.350000" sun_azimuth_angle="0.000000" sun_altitude_angle="15.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="-162.969650" y="154.164505" z="0.0" pitch="0.0" roll="0.0" yaw="367.365723"/>
+      <waypoint x="-96.695007" y="151.258194" z="0.0" pitch="0.0" roll="0.0" yaw="0.269714"/>
+    </weather>
+  </route>
+  <route id="32" town="Town05">
+    <weather id="ClearNight" cloudiness="15.000000" precipitation="0.000000" precipitation_deposits="0.000000" wind_intensity="0.350000" sun_azimuth_angle="0.000000" sun_altitude_angle="-80.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="188.918259" y="-162.416794" z="0.0" pitch="0.0" roll="0.0" yaw="-125.857582"/>
+      <waypoint x="-42.904465" y="-200.506302" z="0.0" pitch="0.0" roll="0.0" yaw="-179.923553"/>
+    </weather>
+  </route>
+  <route id="33" town="Town05">
+    <weather id="ClearSunset" cloudiness="15.000000" precipitation="0.000000" precipitation_deposits="0.000000" wind_intensity="0.350000" sun_azimuth_angle="45.000000" sun_altitude_angle="15.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="-145.173752" y="-0.597323" z="0.0" pitch="0.0" roll="0.0" yaw="179.860535"/>
+      <waypoint x="-23.247847" y="-84.428810" z="0.0" pitch="0.0" roll="0.0" yaw="0.086304"/>
+    </weather>
+  </route>
+  <route id="34" town="Town05">
+    <weather id="WetNoon" cloudiness="20.000000" precipitation="0.000000" precipitation_deposits="50.000000" wind_intensity="0.350000" sun_azimuth_angle="45.000000" sun_altitude_angle="75.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="-132.991043" y="-81.470184" z="0.0" pitch="0.0" roll="0.0" yaw="52.345299"/>
+      <waypoint x="-85.645920" y="94.968704" z="0.0" pitch="0.0" roll="0.0" yaw="0.065567"/>
+    </weather>
+  </route>
+  <route id="35" town="Town05">
+    <weather id="WetCloudyNoon" cloudiness="90.000000" precipitation="0.000000" precipitation_deposits="50.000000" wind_intensity="0.350000" sun_azimuth_angle="180.000000" sun_altitude_angle="75.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="-43.829308" y="75.626945" z="0.0" pitch="0.0" roll="0.0" yaw="-89.620689"/>
+      <waypoint x="-47.905426" y="-74.697113" z="0.0" pitch="0.0" roll="0.0" yaw="-90.337494"/>
+    </weather>
+  </route>
+  <route id="36" town="Town05">
+    <weather id="SoftRainNoon" cloudiness="90.000000" precipitation="15.000000" precipitation_deposits="50.000000" wind_intensity="0.350000" sun_azimuth_angle="315.000000" sun_altitude_angle="75.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="-127.617828" y="67.923744" z="0.0" pitch="0.0" roll="0.0" yaw="89.488609"/>
+      <waypoint x="-74.907394" y="141.589386" z="0.0" pitch="0.0" roll="0.0" yaw="156.819168"/>
+    </weather>
+  </route>
+  <route id="37" town="Town05">
+    <weather id="HardRainNight" cloudiness="90.000000" precipitation="60.000000" precipitation_deposits="100.000000" wind_intensity="1.000000" sun_azimuth_angle="225.000000" sun_altitude_angle="-80.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="24.601877" y="-81.587029" z="0.0" pitch="0.0" roll="0.0" yaw="54.617241"/>
+      <waypoint x="-43.551472" y="33.659817" z="0.0" pitch="0.0" roll="0.0" yaw="270.379303"/>
+    </weather>
+  </route>
+  <route id="38" town="Town05">
+    <weather id="WetCloudyNight" cloudiness="90.000000" precipitation="0.000000" precipitation_deposits="50.000000" wind_intensity="0.350000" sun_azimuth_angle="225.000000" sun_altitude_angle="-80.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="-89.753906" y="-0.732218" z="0.0" pitch="0.0" roll="0.0" yaw="179.860535"/>
+      <waypoint x="-188.083664" y="-45.584751" z="0.0" pitch="0.0" roll="0.0" yaw="-90.015793"/>
+    </weather>
+  </route>
+  <route id="39" town="Town05">
+    <weather id="WetCloudyNoon" cloudiness="90.000000" precipitation="0.000000" precipitation_deposits="50.000000" wind_intensity="0.350000" sun_azimuth_angle="180.000000" sun_altitude_angle="75.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="-42.913803" y="-193.506302" z="0.0" pitch="0.0" roll="0.0" yaw="0.076447"/>
+      <waypoint x="43.961548" y="-87.608421" z="0.0" pitch="0.0" roll="0.0" yaw="-1.444264"/>
+    </weather>
+  </route>
+  <route id="40" town="Town05">
+    <weather id="WetSunset" cloudiness="20.000000" precipitation="0.000000" precipitation_deposits="50.000000" wind_intensity="0.350000" sun_azimuth_angle="270.000000" sun_altitude_angle="15.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="-98.979683" y="-145.608185" z="0.0" pitch="0.0" roll="0.0" yaw="180.442566"/>
+      <waypoint x="-73.787788" y="-84.504936" z="0.0" pitch="0.0" roll="0.0" yaw="0.086304"/>
+    </weather>
+  </route>
+  <route id="41" town="Town05">
+    <weather id="CloudySunset" cloudiness="80.000000" precipitation="0.000000" precipitation_deposits="0.000000" wind_intensity="0.350000" sun_azimuth_angle="270.000000" sun_altitude_angle="15.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="96.418709" y="-9.164156" z="0.0" pitch="0.0" roll="0.0" yaw="-269.830688"/>
+      <waypoint x="34.960987" y="-150.544434" z="0.0" pitch="0.0" roll="0.0" yaw="271.532074"/>
+    </weather>
+  </route>
+  <route id="42" town="Town05">
+    <weather id="CloudyNoon" cloudiness="80.000000" precipitation="0.000000" precipitation_deposits="0.000000" wind_intensity="0.350000" sun_azimuth_angle="45.000000" sun_altitude_angle="75.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="-120.653801" y="63.861423" z="0.0" pitch="0.0" roll="0.0" yaw="-90.511391"/>
+      <waypoint x="-62.654774" y="132.598633" z="0.0" pitch="0.0" roll="0.0" yaw="130.639694"/>
+    </weather>
+  </route>
+  <route id="43" town="Town05">
+    <weather id="HardRainNight" cloudiness="90.000000" precipitation="60.000000" precipitation_deposits="100.000000" wind_intensity="1.000000" sun_azimuth_angle="225.000000" sun_altitude_angle="-80.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="-188.090286" y="-69.584732" z="0.0" pitch="0.0" roll="0.0" yaw="-90.015793"/>
+      <waypoint x="-160.535278" y="-146.078033" z="0.0" pitch="0.0" roll="0.0" yaw="539.416321"/>
+    </weather>
+  </route>
+  <route id="44" town="Town05">
+    <weather id="SoftRainNoon" cloudiness="90.000000" precipitation="15.000000" precipitation_deposits="50.000000" wind_intensity="0.350000" sun_azimuth_angle="315.000000" sun_altitude_angle="75.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="150.475616" y="196.845505" z="0.0" pitch="0.0" roll="0.0" yaw="-27.271400"/>
+      <waypoint x="199.528564" y="146.041245" z="0.0" pitch="0.0" roll="0.0" yaw="-64.738098"/>
+    </weather>
+  </route>
+  <route id="45" town="Town05">
+    <weather id="WetCloudyNoon" cloudiness="90.000000" precipitation="0.000000" precipitation_deposits="50.000000" wind_intensity="0.350000" sun_azimuth_angle="180.000000" sun_altitude_angle="75.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="-241.020111" y="139.814362" z="0.0" pitch="0.0" roll="0.0" yaw="69.465881"/>
+      <waypoint x="-13.656183" y="208.566376" z="0.0" pitch="0.0" roll="0.0" yaw="-0.028713"/>
+    </weather>
+  </route>
+  <route id="46" town="Town05">
+    <weather id="SoftRainNight" cloudiness="90.000000" precipitation="15.000000" precipitation_deposits="50.000000" wind_intensity="0.350000" sun_azimuth_angle="270.000000" sun_altitude_angle="-80.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="-47.387928" y="84.470490" z="0.0" pitch="0.0" roll="0.0" yaw="-89.620697"/>
+      <waypoint x="-173.977875" y="87.867638" z="0.0" pitch="0.0" roll="0.0" yaw="-179.934433"/>
+    </weather>
+  </route>
+  <route id="47" town="Town05">
+    <weather id="ClearSunset" cloudiness="15.000000" precipitation="0.000000" precipitation_deposits="0.000000" wind_intensity="0.350000" sun_azimuth_angle="45.000000" sun_altitude_angle="15.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="5.175807" y="-0.963282" z="0.0" pitch="0.0" roll="0.0" yaw="179.860535"/>
+      <waypoint x="-117.856110" y="0.190366" z="0.0" pitch="0.0" roll="0.0" yaw="-198.309021"/>
+    </weather>
+  </route>
+  <route id="48" town="Town05">
+    <weather id="MidRainSunset" cloudiness="80.000000" precipitation="30.000000" precipitation_deposits="50.000000" wind_intensity="0.400000" sun_azimuth_angle="270.000000" sun_altitude_angle="15.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="-229.958328" y="94.803604" z="0.0" pitch="0.0" roll="0.0" yaw="0.065567"/>
+      <waypoint x="-183.120712" y="-119.532990" z="0.0" pitch="0.0" roll="0.0" yaw="290.056091"/>
+    </weather>
+  </route>
+  <route id="49" town="Town05">
+    <weather id="SoftRainNoon" cloudiness="90.000000" precipitation="15.000000" precipitation_deposits="50.000000" wind_intensity="0.350000" sun_azimuth_angle="315.000000" sun_altitude_angle="75.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="-206.059479" y="91.330940" z="0.0" pitch="0.0" roll="0.0" yaw="0.065567"/>
+      <waypoint x="-108.298363" y="147.703522" z="0.0" pitch="0.0" roll="0.0" yaw="-179.730286"/>
+    </weather>
+  </route>
+  <route id="50" town="Town05">
+    <weather id="SoftRainSunset" cloudiness="90.000000" precipitation="15.000000" precipitation_deposits="50.000000" wind_intensity="0.350000" sun_azimuth_angle="270.000000" sun_altitude_angle="15.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="-127.252449" y="-88.085480" z="0.0" pitch="0.0" roll="0.0" yaw="0.086304"/>
+      <waypoint x="-16.807095" y="6.090246" z="0.0" pitch="0.0" roll="0.0" yaw="359.860535"/>
+    </weather>
+  </route>
+  <route id="51" town="Town05">
+    <weather id="SoftRainSunset" cloudiness="90.000000" precipitation="15.000000" precipitation_deposits="50.000000" wind_intensity="0.350000" sun_azimuth_angle="270.000000" sun_altitude_angle="15.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="-128.434769" y="-36.888027" z="0.0" pitch="0.0" roll="0.0" yaw="90.393539"/>
+      <waypoint x="-89.736870" y="6.267761" z="0.0" pitch="0.0" roll="0.0" yaw="359.860535"/>
+    </weather>
+  </route>
+  <route id="52" town="Town05">
+    <weather id="HardRainNoon" cloudiness="90.000000" precipitation="60.000000" precipitation_deposits="100.000000" wind_intensity="1.000000" sun_azimuth_angle="90.000000" sun_altitude_angle="75.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="-183.672913" y="-117.828827" z="0.0" pitch="0.0" roll="0.0" yaw="285.852448"/>
+      <waypoint x="-73.570557" y="-142.354385" z="0.0" pitch="0.0" roll="0.0" yaw="201.496338"/>
+    </weather>
+  </route>
+  <route id="53" town="Town05">
+    <weather id="ClearNoon" cloudiness="15.000000" precipitation="0.000000" precipitation_deposits="0.000000" wind_intensity="0.350000" sun_azimuth_angle="0.000000" sun_altitude_angle="75.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="-182.663269" y="-82.829285" z="0.0" pitch="0.0" roll="0.0" yaw="-38.020916"/>
+      <waypoint x="-119.926117" y="-130.723236" z="0.0" pitch="0.0" roll="0.0" yaw="-59.572556"/>
+    </weather>
+  </route>
+  <route id="54" town="Town05">
+    <weather id="ClearSunset" cloudiness="15.000000" precipitation="0.000000" precipitation_deposits="0.000000" wind_intensity="0.350000" sun_azimuth_angle="45.000000" sun_altitude_angle="15.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="-98.662003" y="144.248856" z="0.0" pitch="0.0" roll="0.0" yaw="-179.730286"/>
+      <waypoint x="-124.658302" y="-77.125008" z="0.0" pitch="0.0" roll="0.0" yaw="270.393555"/>
+    </weather>
+  </route>
+  <route id="55" town="Town05">
+    <weather id="CloudySunset" cloudiness="80.000000" precipitation="0.000000" precipitation_deposits="0.000000" wind_intensity="0.350000" sun_azimuth_angle="270.000000" sun_altitude_angle="15.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="98.582733" y="188.059784" z="0.0" pitch="0.0" roll="0.0" yaw="180.287811"/>
+      <waypoint x="24.257715" y="89.634453" z="0.0" pitch="0.0" roll="0.0" yaw="-152.207199"/>
+    </weather>
+  </route>
+  <route id="56" town="Town05">
+    <weather id="ClearNoon" cloudiness="15.000000" precipitation="0.000000" precipitation_deposits="0.000000" wind_intensity="0.350000" sun_azimuth_angle="0.000000" sun_altitude_angle="75.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="-127.635681" y="65.923820" z="0.0" pitch="0.0" roll="0.0" yaw="89.488609"/>
+      <waypoint x="34.965904" y="-0.615163" z="0.0" pitch="0.0" roll="0.0" yaw="269.488251"/>
+    </weather>
+  </route>
+  <route id="57" town="Town05">
+    <weather id="ClearSunset" cloudiness="15.000000" precipitation="0.000000" precipitation_deposits="0.000000" wind_intensity="0.350000" sun_azimuth_angle="45.000000" sun_altitude_angle="15.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="-0.807141" y="6.051302" z="0.0" pitch="0.0" roll="0.0" yaw="359.860535"/>
+      <waypoint x="53.736488" y="84.969910" z="0.0" pitch="0.0" roll="0.0" yaw="179.583817"/>
+    </weather>
+  </route>
+  <route id="58" town="Town05">
+    <weather id="MidRainSunset" cloudiness="80.000000" precipitation="30.000000" precipitation_deposits="50.000000" wind_intensity="0.400000" sun_azimuth_angle="270.000000" sun_altitude_angle="15.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="-52.494102" y="-108.231010" z="0.0" pitch="0.0" roll="0.0" yaw="-282.640503"/>
+      <waypoint x="26.346886" y="-0.594618" z="0.0" pitch="0.0" roll="0.0" yaw="-41.069061"/>
+    </weather>
+  </route>
+  <route id="59" town="Town05">
+    <weather id="CloudyNoon" cloudiness="80.000000" precipitation="0.000000" precipitation_deposits="0.000000" wind_intensity="0.350000" sun_azimuth_angle="45.000000" sun_altitude_angle="75.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="55.345562" y="-207.687683" z="0.0" pitch="0.0" roll="0.0" yaw="179.757080"/>
+      <waypoint x="26.669436" y="-102.348885" z="0.0" pitch="0.0" roll="0.0" yaw="91.532074"/>
+    </weather>
+  </route>
+  <route id="60" town="Town05">
+    <weather id="CloudyNoon" cloudiness="80.000000" precipitation="0.000000" precipitation_deposits="0.000000" wind_intensity="0.350000" sun_azimuth_angle="45.000000" sun_altitude_angle="75.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="37.858002" y="-6.191970" z="0.0" pitch="0.0" roll="0.0" yaw="-146.353668"/>
+      <waypoint x="-51.157799" y="-32.647221" z="0.0" pitch="0.0" roll="0.0" yaw="89.662506"/>
+    </weather>
+  </route>
+  <route id="61" town="Town05">
+    <weather id="ClearNoon" cloudiness="15.000000" precipitation="0.000000" precipitation_deposits="0.000000" wind_intensity="0.350000" sun_azimuth_angle="0.000000" sun_altitude_angle="75.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="26.190796" y="90.875755" z="0.0" pitch="0.0" roll="0.0" yaw="-142.380798"/>
+      <waypoint x="9.167277" y="-4.473007" z="0.0" pitch="0.0" roll="0.0" yaw="179.860535"/>
+    </weather>
+  </route>
+  <route id="62" town="Town05">
+    <weather id="SoftRainNight" cloudiness="90.000000" precipitation="15.000000" precipitation_deposits="50.000000" wind_intensity="0.350000" sun_azimuth_angle="270.000000" sun_altitude_angle="-80.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="42.757832" y="-84.076843" z="0.0" pitch="0.0" roll="0.0" yaw="-1.795883"/>
+      <waypoint x="114.702240" y="-192.736191" z="0.0" pitch="0.0" roll="0.0" yaw="8.849396"/>
+    </weather>
+  </route>
+  <route id="63" town="Town05">
+    <weather id="ClearNoon" cloudiness="15.000000" precipitation="0.000000" precipitation_deposits="0.000000" wind_intensity="0.350000" sun_azimuth_angle="0.000000" sun_altitude_angle="75.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="-195.069366" y="6.337188" z="0.0" pitch="0.0" roll="0.0" yaw="89.984207"/>
+      <waypoint x="-123.927780" y="89.199989" z="0.0" pitch="0.0" roll="0.0" yaw="-90.511391"/>
+    </weather>
+  </route>
+  <route id="64" town="Town05">
+    <weather id="WetCloudySunset" cloudiness="90.000000" precipitation="0.000000" precipitation_deposits="50.000000" wind_intensity="0.350000" sun_azimuth_angle="0.000000" sun_altitude_angle="15.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="-206.492355" y="-88.204834" z="0.0" pitch="0.0" roll="0.0" yaw="0.086304"/>
+      <waypoint x="-220.362045" y="-3.914321" z="0.0" pitch="0.0" roll="0.0" yaw="179.860535"/>
+    </weather>
+  </route>
+  <route id="65" town="Town05">
+    <weather id="MidRainyNight" cloudiness="80.000000" precipitation="30.000000" precipitation_deposits="50.000000" wind_intensity="0.400000" sun_azimuth_angle="225.000000" sun_altitude_angle="-80.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="-111.376808" y="6.320434" z="0.0" pitch="0.0" roll="0.0" yaw="-0.139450"/>
+      <waypoint x="-143.793884" y="84.402161" z="0.0" pitch="0.0" roll="0.0" yaw="-179.934433"/>
+    </weather>
+  </route>
+  <route id="66" town="Town05">
+    <weather id="HardRainSunset" cloudiness="80.000000" precipitation="60.000000" precipitation_deposits="100.000000" wind_intensity="1.000000" sun_azimuth_angle="0.000000" sun_altitude_angle="15.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="-127.489517" y="5.285637" z="0.0" pitch="0.0" roll="0.0" yaw="-128.048981"/>
+      <waypoint x="44.771362" y="-87.628838" z="0.0" pitch="0.0" roll="0.0" yaw="-1.444260"/>
+    </weather>
+  </route>
+  <route id="67" town="Town05">
+    <weather id="HardRainNoon" cloudiness="90.000000" precipitation="60.000000" precipitation_deposits="100.000000" wind_intensity="1.000000" sun_azimuth_angle="90.000000" sun_altitude_angle="75.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="36.324661" y="-70.623543" z="0.0" pitch="0.0" roll="0.0" yaw="271.532074"/>
+      <waypoint x="-93.787766" y="-84.535065" z="0.0" pitch="0.0" roll="0.0" yaw="0.086304"/>
+    </weather>
+  </route>
+  <route id="68" town="Town05">
+    <weather id="CloudyNoon" cloudiness="80.000000" precipitation="0.000000" precipitation_deposits="0.000000" wind_intensity="0.350000" sun_azimuth_angle="45.000000" sun_altitude_angle="75.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="31.555437" y="141.737717" z="0.0" pitch="0.0" roll="0.0" yaw="-89.977104"/>
+      <waypoint x="35.127960" y="-25.880865" z="0.0" pitch="0.0" roll="0.0" yaw="271.532074"/>
+    </weather>
+  </route>
+  <route id="69" town="Town05">
+    <weather id="SoftRainNight" cloudiness="90.000000" precipitation="15.000000" precipitation_deposits="50.000000" wind_intensity="0.350000" sun_azimuth_angle="270.000000" sun_altitude_angle="-80.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="-131.989639" y="-28.912254" z="0.0" pitch="0.0" roll="0.0" yaw="90.393539"/>
+      <waypoint x="99.602989" y="24.068264" z="0.0" pitch="0.0" roll="0.0" yaw="90.699165"/>
+    </weather>
+  </route>
+  <route id="70" town="Town05">
+    <weather id="ClearNight" cloudiness="15.000000" precipitation="0.000000" precipitation_deposits="0.000000" wind_intensity="0.350000" sun_azimuth_angle="0.000000" sun_altitude_angle="-80.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="-54.459923" y="-5.472600" z="0.0" pitch="0.0" roll="0.0" yaw="-271.038971"/>
+      <waypoint x="-76.733994" y="142.309067" z="0.0" pitch="0.0" roll="0.0" yaw="160.172287"/>
+    </weather>
+  </route>
+  <route id="71" town="Town05">
+    <weather id="MidRainSunset" cloudiness="80.000000" precipitation="30.000000" precipitation_deposits="50.000000" wind_intensity="0.400000" sun_azimuth_angle="270.000000" sun_altitude_angle="15.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="-48.366993" y="6.167065" z="0.0" pitch="0.0" roll="0.0" yaw="359.860535"/>
+      <waypoint x="-171.182190" y="-4.034028" z="0.0" pitch="0.0" roll="0.0" yaw="179.860535"/>
+    </weather>
+  </route>
+  <route id="72" town="Town05">
+    <weather id="WetCloudySunset" cloudiness="90.000000" precipitation="0.000000" precipitation_deposits="50.000000" wind_intensity="0.350000" sun_azimuth_angle="0.000000" sun_altitude_angle="15.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="-116.276863" y="96.606461" z="0.0" pitch="0.0" roll="0.0" yaw="-29.288792"/>
+      <waypoint x="-50.798283" y="70.917633" z="0.0" pitch="0.0" roll="0.0" yaw="90.379295"/>
+    </weather>
+  </route>
+  <route id="73" town="Town05">
+    <weather id="MidRainyNoon" cloudiness="80.000000" precipitation="30.000000" precipitation_deposits="50.000000" wind_intensity="0.400000" sun_azimuth_angle="0.000000" sun_altitude_angle="75.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="24.487488" y="-20.202879" z="0.0" pitch="0.0" roll="0.0" yaw="91.088173"/>
+      <waypoint x="-50.901093" y="86.447281" z="0.0" pitch="0.0" roll="0.0" yaw="-269.620697"/>
+    </weather>
+  </route>
+  <route id="74" town="Town05">
+    <weather id="ClearNoon" cloudiness="15.000000" precipitation="0.000000" precipitation_deposits="0.000000" wind_intensity="0.350000" sun_azimuth_angle="0.000000" sun_altitude_angle="75.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="69.369095" y="-207.747147" z="0.0" pitch="0.0" roll="0.0" yaw="179.757080"/>
+      <waypoint x="-120.977791" y="-103.392815" z="0.0" pitch="0.0" roll="0.0" yaw="270.393555"/>
+    </weather>
+  </route>
+  <route id="75" town="Town05">
+    <weather id="CloudyNoon" cloudiness="80.000000" precipitation="0.000000" precipitation_deposits="0.000000" wind_intensity="0.350000" sun_azimuth_angle="45.000000" sun_altitude_angle="75.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="-120.029564" y="-98.844063" z="0.0" pitch="0.0" roll="0.0" yaw="-121.868721"/>
+      <waypoint x="-130.103729" y="-0.768955" z="0.0" pitch="0.0" roll="0.0" yaw="-39.918945"/>
+    </weather>
+  </route>
+  <route id="76" town="Town05">
+    <weather id="SoftRainNoon" cloudiness="90.000000" precipitation="15.000000" precipitation_deposits="50.000000" wind_intensity="0.350000" sun_azimuth_angle="315.000000" sun_altitude_angle="75.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="25.635248" y="95.182716" z="0.0" pitch="0.0" roll="0.0" yaw="2.107590"/>
+      <waypoint x="-57.663193" y="194.588425" z="0.0" pitch="0.0" roll="0.0" yaw="179.971283"/>
+    </weather>
+  </route>
+  <route id="77" town="Town05">
+    <weather id="ClearNoon" cloudiness="15.000000" precipitation="0.000000" precipitation_deposits="0.000000" wind_intensity="0.350000" sun_azimuth_angle="0.000000" sun_altitude_angle="75.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="-61.762512" y="-4.300361" z="0.0" pitch="0.0" roll="0.0" yaw="179.860535"/>
+      <waypoint x="-124.135818" y="65.892586" z="0.0" pitch="0.0" roll="0.0" yaw="-90.511391"/>
+    </weather>
+  </route>
+  <route id="78" town="Town05">
+    <weather id="WetCloudyNoon" cloudiness="90.000000" precipitation="0.000000" precipitation_deposits="50.000000" wind_intensity="0.350000" sun_azimuth_angle="180.000000" sun_altitude_angle="75.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="-145.156723" y="6.402656" z="0.0" pitch="0.0" roll="0.0" yaw="359.860535"/>
+      <waypoint x="-75.782509" y="-88.007942" z="0.0" pitch="0.0" roll="0.0" yaw="0.086304"/>
+    </weather>
+  </route>
+  <route id="79" town="Town05">
+    <weather id="WetSunset" cloudiness="20.000000" precipitation="0.000000" precipitation_deposits="50.000000" wind_intensity="0.350000" sun_azimuth_angle="270.000000" sun_altitude_angle="15.000000" fog_density="0.000000" fog_distance="0.000000" fog_falloff="0.000000" wetness="0.000000">
+      <waypoint x="38.994606" y="-96.448517" z="0.0" pitch="0.0" roll="0.0" yaw="230.427780"/>
+      <waypoint x="-136.895020" y="-207.631683" z="0.0" pitch="0.0" roll="0.0" yaw="-179.923553"/>
+    </weather>
+  </route>
+</routes>
