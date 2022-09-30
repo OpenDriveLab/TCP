@@ -95,7 +95,7 @@ def gen_single_route(route_folder):
 		seq_feature.append(roach_supervision_data["features"])
 		seq_value.append(roach_supervision_data["value"])
 		
-		front_img_list = [route_folder+"/rgb/"f"{str(i-_).zfill(4)}.png" for _ in range(INPUT_FRAMES-1, -1, -1)]
+		front_img_list = [route_folder.replace(data_path,'')+"/rgb/"f"{str(i-_).zfill(4)}.png" for _ in range(INPUT_FRAMES-1, -1, -1)]
 		seq_front_img.append(front_img_list)
 
 		seq_speed.append(measurement["speed"])
@@ -203,19 +203,15 @@ def gen_sub_folder(folder_path):
 
 
 if __name__ == '__main__':
-	data_path = "/home/wupenghao/transfuser/data_extra/roach_ap_data_collect_nonoise_all"
-	routes_type = ["tiny"]
+	global data_path
+	data_path = "tcp_carla_data"
 	towns = ["town01","town01_val","town01_addition","town02","town02_val","town03","town03_val","town03_addition", "town04","town04_val", "town04_addition", "town05", "town05_val", "town05_addition" ,"town06","town06_val", "town06_addition","town07", "town07_val", "town10", "town10_addition","town10_val"]
-
-	# towns = ["town05", "town10_addition", "town10"]
-	# towns = ["town01", "town02", "town03", "town04", "town05", "town06", "town07", "town10"]
 	pattern = "{}" # town type
 	import tqdm
 	total = 0
-	for type in routes_type:
-		for town in tqdm.tqdm(towns):
-			number = gen_sub_folder(os.path.join(data_path, pattern.format(town)))
-			total += number
+	for town in tqdm.tqdm(towns):
+		number = gen_sub_folder(os.path.join(data_path, pattern.format(town)))
+		total += number
 
 	print(total)
 

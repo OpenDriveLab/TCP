@@ -168,9 +168,9 @@ if __name__ == "__main__":
 	config = GlobalConfig()
 
 	# Data
-	train_set = CARLA_Data(root=config.train_data, img_aug = config.img_aug)
+	train_set = CARLA_Data(root=config.root_dir_all, data_folders=config.train_data, img_aug = config.img_aug)
 	print(len(train_set))
-	val_set = CARLA_Data(root=config.val_data)
+	val_set = CARLA_Data(root=config.root_dir_all, data_folders=config.val_data,)
 	print(len(val_set))
 
 	dataloader_train = DataLoader(train_set, batch_size=args.batch_size, shuffle=True, num_workers=8)

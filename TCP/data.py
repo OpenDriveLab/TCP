@@ -9,8 +9,8 @@ from TCP.augment import hard as augmenter
 
 class CARLA_Data(Dataset):
 
-	def __init__(self, root, img_aug = False):
-
+	def __init__(self, root, data_folders, img_aug = False):
+		self.root = root
 		self.img_aug = img_aug
 		self._batch_read_number = 0
 
@@ -45,7 +45,7 @@ class CARLA_Data(Dataset):
 		self.command = []
 		self.only_ap_brake = []
 
-		for sub_root in root:
+		for sub_root in data_folders:
 			data = np.load(os.path.join(sub_root, "packed_data.npy"), allow_pickle=True).item()
 
 			self.x_command += data['x_target']
@@ -87,10 +87,10 @@ class CARLA_Data(Dataset):
 
 		if self.img_aug:
 			data['front_img'] = self._im_transform(augmenter(self._batch_read_number).augment_image(np.array(
-					Image.open(self.front_img[index][0]))))
+					Image.open(self.root+self.front_img[index][0]))))
 		else:
 			data['front_img'] = self._im_transform(np.array(
-					Image.open(self.front_img[index][0])))
+					Image.open(self.root+self.front_img[index][0])))
 
 		# fix for theta=nan in some measurements
 		if np.isnan(self.theta[index][0]):
