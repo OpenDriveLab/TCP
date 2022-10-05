@@ -1,0 +1,64 @@
+entry_point: roach.rl_birdview_agent:RlBirdviewAgent
+wb_run_path: null
+wb_ckpt_step: null
+env_wrapper:
+  entry_point: roach.utils.rl_birdview_wrapper:RlBirdviewWrapper
+  kwargs:
+    input_states:
+    - control
+    - vel_xy
+    acc_as_action: true
+policy:
+  entry_point: roach.models.ppo_policy:PpoPolicy
+  kwargs:
+    policy_head_arch:
+    - 256
+    - 256
+    value_head_arch:
+    - 256
+    - 256
+    features_extractor_entry_point: roach.models.torch_layers:XtMaCNN
+    features_extractor_kwargs:
+      states_neurons:
+      - 256
+      - 256
+    distribution_entry_point: roach.models.distributions:BetaDistribution
+    distribution_kwargs:
+      dist_init: null
+training:
+  entry_point: roach.models.ppo:PPO
+  kwargs:
+    learning_rate: 1.0e-05
+    n_steps_total: 12288
+    batch_size: 256
+    n_epochs: 20
+    gamma: 0.99
+    gae_lambda: 0.9
+    clip_range: 0.2
+    clip_range_vf: null
+    ent_coef: 0.01
+    explore_coef: 0.05
+    vf_coef: 0.5
+    max_grad_norm: 0.5
+    target_kl: 0.01
+    update_adv: false
+    lr_schedule_step: 8
+obs_configs:
+  birdview:
+    module: birdview.chauffeurnet
+    width_in_pixels: 192
+    pixels_ev_to_bottom: 40
+    pixels_per_meter: 5.0
+    history_idx:
+    - -16
+    - -11
+    - -6
+    - -1
+    scale_bbox: true
+    scale_mask_col: 1.0
+  speed:
+    module: actor_state.speed
+  control:
+    module: actor_state.control
+  velocity:
+    module: actor_state.velocity
