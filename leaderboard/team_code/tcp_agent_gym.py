@@ -8,7 +8,6 @@ import carla
 from collections import deque
 import math
 from collections import OrderedDict
-import yaml
 
 import torch
 import carla
@@ -23,25 +22,18 @@ from TCP.config import GlobalConfig
 from team_code.planner import RoutePlanner
 
 import sys
-top_path = os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
+# Add the top level directory in system path
+top_path = '/home/eidos/Workspace/GitKraken_ws/VAE_TCP'
 if not top_path in sys.path:
     sys.path.append(top_path)
-
-with open('./config/tcp_config.yml') as f:
-    content = f.read()
-    dic_path = yaml.load(content, Loader=yaml.SafeLoader)
-
-# Add the top level directory in system path
-top_path_vae_tcp = dic_path['rootPath_VAE_TCP']
-if not top_path_vae_tcp in sys.path:
-    sys.path.append(top_path_vae_tcp)
+    
+from tcp_tools.fifo_instance import FIFOInstance
 from tcp_tools.basic_tools import info_show
-from tcp_tools.vae_manager import VAEManager
-from tools.dataset_tcp import NormalizeManager
-# from pythae_ex.models import AutoModel_Ex
+# from tcp_tools.vae_manager import VAEManager
+from pythae_ex.models import AutoModel_Ex
 
 PATH_VAE_MODEL = os.environ.get('PATH_VAE_MODEL', None)
-
+FIFO_PATH = os.environ.get('FIFO_PATH', None)
 SAVE_PATH = os.environ.get('SAVE_PATH', None)
 
 
@@ -102,8 +94,10 @@ class TCPAgent(autonomous_agent.AutonomousAgent):
         
         # <====================================================================
         if PATH_VAE_MODEL is not None:
-            self.vae_manager = VAEManager(PATH_VAE_MODEL)
-            self.norm_manager = NormalizeManager()
+            self.fifo_client = FIFOInstance('client', FIFO_PATH)
+            self.vae_model = AutoModel_Ex.load_from_folder(PATH_VAE_MODEL)
+            self.vae_model.to('cuda')
+            self.vae_model.eval()
         # ====================================================================>
 
     def _init(self):
@@ -209,8 +203,13 @@ class TCPAgent(autonomous_agent.AutonomousAgent):
             self._init()
         tick_data = self.tick(input_data)
         # <=========================
-        if PATH_VAE_MODEL is not None:
-            tick_data = self.__2nd_process(tick_data)
+        # Send memory address of wide_rgb
+        state = self.VAE_process(tick_data['rgb'])
+        state = state.tobytes()
+        self.fifo_client.write(state)
+        recv_data = self.fifo_client.read()
+        # To do
+        print(recv_data)
         # =========================>
         if self.step < self.config.seq_len:
             rgb = self._im_transform(tick_data['rgb']).unsqueeze(0)
@@ -234,9 +233,9 @@ class TCPAgent(autonomous_agent.AutonomousAgent):
         speed = torch.FloatTensor([float(tick_data['speed'])]).view(1,1).to('cuda', dtype=torch.float32)
         speed = speed / 12
         # Add an extra dimension for AI input
-        # info_show(tick_data['rgb'][0,0,0], 'rgb')
+        info_show(tick_data['rgb'], 'rgb')
         rgb = self._im_transform(tick_data['rgb']).unsqueeze(0).to('cuda', dtype=torch.float32)
-        # info_show(rgb, 'rgb')
+        info_show(rgb, 'rgb')
         tick_data['target_point'] = [torch.FloatTensor([tick_data['target_point'][0]]),
                                         torch.FloatTensor([tick_data['target_point'][1]])]
         target_point = torch.stack(tick_data['target_point'], dim=1).to('cuda', dtype=torch.float32)
@@ -313,42 +312,25 @@ class TCPAgent(autonomous_agent.AutonomousAgent):
 
     def destroy(self):
         del self.net
-        if PATH_VAE_MODEL is not None:
-            del self.vae_manager
         torch.cuda.empty_cache()
     
-    def __2nd_process(self, tick_data):
-        # normalize (0, 255) to (-2.x, 2.x)
-        rgb = self._im_transform(tick_data['rgb']).unsqueeze(0).to('cuda', dtype=torch.float32)
-        # info_show(rgb, '2nd_rgb')
-        rgb_dic = {'data':rgb}
-        rgb_recon = self.vae_manager.forward(rgb_dic)['recon_x']
-        # denormalize (-1, 1) to (0, 255)
-        rgb_recon = self.norm_manager.denorm(rgb_recon)*255
-        rgb_recon = rgb_recon.squeeze(0)
-        rgb_recon = rgb_recon.permute(1, 2, 0)
-        # Here should convert the tensor to np.uint8. Reason is unkown at this point.
-        rgb_recon = np.array(rgb_recon.cpu().detach(), dtype = np.uint8)
-        # info_show(rgb_recon, '2nd_rgb_recon')
-        tick_data['rgb'] = rgb_recon
-        return tick_data
-    
-    '''# Old version
-    def __2nd_process(self, tick_data):
-        rgb = tick_data['rgb']
-        # normalize (0, 255) to (-1, 1)
-        rgb = rgb/127.5 - 1
-        rgb = torch.Tensor(rgb).unsqueeze(0).to('cuda')
-        rgb = rgb.permute(0, 3, 1, 2)
-        rgb_dic = {'data':rgb}
-        rgb = self.vae_manager.forward(rgb_dic)['recon_x']
-        # denormalize (-1, 1) to (0, 255)
-        rgb = rgb.squeeze(0)
-        rgb = rgb.permute(1, 2, 0)
-        rgb = (rgb+1)*127.5
-        # Here should convert the tensor to np.uint8. Reason is unkown at this point.
-        rgb = np.array(rgb.cpu().detach(), dtype = np.uint8)
-        # info_show(rgb, '2nd_rgb')
-        tick_data['rgb'] = rgb
-        return tick_data
-    '''
+    def VAE_process(self, wide_rgb):
+        # Construct as a batch
+        wide_rgb = np.expand_dims(wide_rgb, axis = 0)
+        # Normalize
+        wide_rgb = torch.tensor(wide_rgb).permute(0,3,1,2).to('cuda', dtype=torch.float)/127.5 - 1
+        # narr_array = np.expand_dims(np.transpose(narr_array, (2,0,1)), axis = 0)
+        
+        encoder_output = self.vae_model.encoder(wide_rgb)
+        mu, log_var = encoder_output.embedding, encoder_output.log_covariance
+        std = torch.exp(0.5 * log_var)
+        
+        mu = mu.cpu().detach()
+        std = std.cpu().detach()
+        
+        mu = np.float32(mu)
+        std = np.float32(std)
+        
+        state = np.vstack((mu, std))
+        print(state.shape)
+        return state

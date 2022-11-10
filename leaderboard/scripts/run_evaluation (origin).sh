@@ -20,15 +20,11 @@ export RESUME=False
 # TCP evaluation
 export ROUTES=leaderboard/data/evaluation_routes/routes_lav_valid.xml
 export TEAM_AGENT=team_code/tcp_agent.py
-export TEAM_CONFIG=/home/eidos/Workspace/Playground/0_storage/TCP_agent/epoch=59-last.ckpt
+export TEAM_CONFIG=/home/eidos/Workspace/GitKraken_ws/TCP/log/TCP/epoch=59-last.ckpt
 export CHECKPOINT_ENDPOINT=results_TCP.json
 export SCENARIOS=leaderboard/data/scenarios/all_towns_traffic_scenarios.json
-#export SAVE_PATH=data/results_TCP/
+export SAVE_PATH=data/results_TCP/
 
-# VAE_TCP
-export PATH_VAE_MODEL=/home/eidos/Workspace/Playground/0_storage/TCP_VAE_model/VAE_GAN/VAEGAN_training_2022-10-17_18-56-12/final_model
-# Gym
-#export FIFO_PATH=/home/eidos/Workspace/GitKraken_ws/meta_driving/fifo_space
 
 python3 ${LEADERBOARD_ROOT}/leaderboard/leaderboard_evaluator.py \
 --scenarios=${SCENARIOS}  \
