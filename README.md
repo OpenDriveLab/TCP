@@ -107,3 +107,9 @@ Our code is based on several repositories:
 - [CARLA Leaderboard](https://github.com/carla-simulator/leaderboard)
 - [Scenario Runner](https://github.com/carla-simulator/scenario_runner)
 
+# Extra Guidance for VAE_TCP
+# Setup
+Please modify the `./config/tcp_config.yml` at the beginning.
+# Evaluation
+Please modify `./leaderboard/scripts/run_evaluation.sh` at the beginning.
+- PATH_VAE_MODEL: path to the trained VAE model, which will be used for test. If no VAE model need to be used, set this term to None.
