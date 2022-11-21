@@ -148,7 +148,10 @@ class ScenarioManager(object):
             # Update game time and actor information
             GameTime.on_carla_tick(timestamp)
             CarlaDataProvider.on_carla_tick()
-
+            
+            # Tick scenario
+            self.scenario_tree.tick_once()
+            
             try:
                 ego_action = self._agent()
 
@@ -160,9 +163,6 @@ class ScenarioManager(object):
                 raise AgentError(e)
 
             self.ego_vehicles[0].apply_control(ego_action)
-
-            # Tick scenario
-            self.scenario_tree.tick_once()
 
             if self._debug_mode:
                 print("\n")

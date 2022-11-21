@@ -20,6 +20,7 @@ import math
 import numpy as np
 import py_trees
 import shapely
+import socket
 
 import carla
 
@@ -318,6 +319,8 @@ class CollisionTest(Criterion):
         self.registered_collisions = []
         self.last_id = None
         self.collision_time = None
+        
+        self.udp_client = UDPClient(server_port = 12001)
 
     def update(self):
         """
@@ -368,6 +371,7 @@ class CollisionTest(Criterion):
         """
         self = weak_self()
         if not self:
+            
             return
 
         actor_location = CarlaDataProvider.get_location(self.actor)
@@ -1075,6 +1079,8 @@ class OutsideRouteLanesTest(Criterion):
         self._last_lane_id = None
         self._total_distance = 0
         self._wrong_distance = 0
+        
+        self.udp_client = UDPClient(server_port = 12000)
 
     def update(self):
         """
@@ -1128,7 +1134,10 @@ class OutsideRouteLanesTest(Criterion):
                     self._wrong_distance += new_dist
 
         self.logger.debug("%s.update()[%s->%s]" % (self.__class__.__name__, self.status, new_status))
-
+        # <<<<<================================================================
+        if self._outside_lane_active or self._wrong_lane_active:
+            self.udp_client.send('1_outside_lane')
+        # ================================================================>>>>>
         return new_status
 
     def _is_outside_driving_lanes(self, location):
@@ -1627,6 +1636,8 @@ class RouteCompletionTest(Criterion):
         self._traffic_event = TrafficEvent(event_type=TrafficEventType.ROUTE_COMPLETION)
         self.list_traffic_events.append(self._traffic_event)
         self._percentage_route_completed = 0.0
+        
+        # self.udp_client = UDPClient(server_port = 12000)
 
     def update(self):
         """
@@ -1717,6 +1728,9 @@ class RunningRedLightTest(Criterion):
             if 'traffic_light' in _actor.type_id:
                 center, waypoints = self.get_traffic_light_waypoints(_actor)
                 self._list_traffic_lights.append((_actor, center, waypoints))
+        
+        self.udp_client = UDPClient(server_port = 12001)
+        
 
     # pylint: disable=no-self-use
     def is_vehicle_crossing_line(self, seg1, seg2):
@@ -1730,6 +1744,9 @@ class RunningRedLightTest(Criterion):
         return not inter.is_empty
 
     def update(self):
+        # =========================================================
+        current_value = self.actual_value
+        # =========================================================
         """
         Check if the actor is running a red light
         """
@@ -1818,12 +1835,18 @@ class RunningRedLightTest(Criterion):
                         self.list_traffic_events.append(red_light_event)
                         self._last_red_light_id = traffic_light.id
                         break
+                    
 
         if self._terminate_on_failure and (self.test_status == "FAILURE"):
             new_status = py_trees.common.Status.FAILURE
 
         self.logger.debug("%s.update()[%s->%s]" % (self.__class__.__name__, self.status, new_status))
-
+        # <<<<<================================================================
+        if current_value == self.actual_value:
+            self.udp_client.send('0')
+        else:
+            self.udp_client.send('1')
+        # ================================================================>>>>>
         return new_status
 
     def rotate_point(self, point, angle):
@@ -2046,3 +2069,25 @@ class RunningStopTest(Criterion):
         self.logger.debug("%s.update()[%s->%s]" % (self.__class__.__name__, self.status, new_status))
 
         return new_status
+
+class UDPClient:
+    def __init__(self, server_ip: str = '127.0.0.1', server_port: int = 12000):
+        self.BUFSIZE = 2048
+        self.server_ip = server_ip
+        self.server_port = server_port
+        self.clientSocket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    
+    def receive(self) -> str:
+        # server_address is useless here
+        recv_raw_data, server_address = self.clientSocket.recvfrom(self.BUFSIZE)
+        print("Receive message is: ", recv_raw_data.decode('utf-8'))
+        return recv_raw_data.decode('utf-8')
+    
+    def send(self, send_data: str):
+        if not type(send_data) == str:
+            send_data = str(send_data)
+            
+        self.clientSocket.sendto(send_data.encode('utf-8'), (self.server_ip, self.server_port))
+        
+    def destroy(self):
+        self.clientSocket.close()
