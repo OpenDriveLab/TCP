@@ -190,17 +190,17 @@ class TCPAgent(autonomous_agent.AutonomousAgent):
         local_command_point = R.T.dot(local_command_point)
         result['target_point'] = tuple(local_command_point)
         
-        # <=========================
-        # info_show(rgb, 'rgb', False) # (256, 900, 3)
-        # info_show(bev, 'bev', False) # (512, 512, 3)
-        # info_show(gps, 'gps') # (2,)
-        info_show(speed, 'speed') # numpy.float64
-        info_show(compass, 'compass') # numpy.float64
-        info_show(pos, 'pos') # (2,)
-        info_show(next_cmd, 'next_cmd') # RoadOption
-        info_show(result['target_point'], 'target_point') # tuple len=2
-        # info_show(input_data['rgb'][1], 'input_data', False) # (256, 900, 4)
-        # =========================>
+        # # <=========================
+        # # info_show(rgb, 'rgb', False) # (256, 900, 3)
+        # # info_show(bev, 'bev', False) # (512, 512, 3)
+        # # info_show(gps, 'gps') # (2,)
+        # info_show(speed, 'speed') # numpy.float64
+        # info_show(compass, 'compass') # numpy.float64
+        # info_show(pos, 'pos') # (2,)
+        # info_show(next_cmd, 'next_cmd') # RoadOption
+        # info_show(result['target_point'], 'target_point') # tuple len=2
+        # # info_show(input_data['rgb'][1], 'input_data', False) # (256, 900, 4)
+        # # =========================>
 
         return result
     @torch.no_grad()

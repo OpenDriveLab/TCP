@@ -21,6 +21,7 @@ import numpy as np
 import py_trees
 import shapely
 import socket
+import copy
 
 import carla
 
@@ -326,6 +327,8 @@ class CollisionTest(Criterion):
         """
         Check collision count
         """
+        previous_collision_length = len(self.registered_collisions)
+        
         new_status = py_trees.common.Status.RUNNING
 
         if self._terminate_on_failure and (self.test_status == "FAILURE"):
@@ -351,7 +354,14 @@ class CollisionTest(Criterion):
             self.last_id = None
 
         self.logger.debug("%s.update()[%s->%s]" % (self.__class__.__name__, self.status, new_status))
-
+        
+        if previous_collision_length == len(self.registered_collisions):
+            self.udp_client.send("2_0_collision")
+            print("2_0_collision")
+        else:
+            self.udp_client.send("2_1_collision")
+            print("2_1_collision")
+        
         return new_status
 
     def terminate(self, new_status):
@@ -371,17 +381,22 @@ class CollisionTest(Criterion):
         """
         self = weak_self()
         if not self:
-            
+            # self.udp_client.send("2_0_collision")
+            # print("2_0_collision")
             return
 
         actor_location = CarlaDataProvider.get_location(self.actor)
 
         # Ignore the current one if it is the same id as before
         if self.last_id == event.other_actor.id:
+            # self.udp_client.send("2_0_collision")
+            # print("2_0_collision")
             return
 
         # Filter to only a specific actor
         if self.other_actor and self.other_actor.id != event.other_actor.id:
+            # self.udp_client.send("2_0_collision")
+            # print("2_0_collision")
             return
 
         # Filter to only a specific type
@@ -389,9 +404,13 @@ class CollisionTest(Criterion):
             if self.other_actor_type == "miscellaneous":
                 if "traffic" not in event.other_actor.type_id \
                         and "static" not in event.other_actor.type_id:
+                    # self.udp_client.send("2_0_collision")
+                    # print("2_0_collision")
                     return
             else:
                 if self.other_actor_type not in event.other_actor.type_id:
+                    # self.udp_client.send("2_0_collision")
+                    # print("2_0_collision")
                     return
 
         # Ignore it if its too close to a previous collision (avoid micro collisions)
@@ -401,6 +420,8 @@ class CollisionTest(Criterion):
             distance = math.sqrt(math.pow(distance_vector.x, 2) + math.pow(distance_vector.y, 2))
 
             if distance <= self.MIN_AREA_OF_COLLISION:
+                # self.udp_client.send("2_0_collision")
+                # print("2_0_collision")
                 return
 
         if ('static' in event.other_actor.type_id or 'traffic' in event.other_actor.type_id) \
@@ -411,6 +432,8 @@ class CollisionTest(Criterion):
         elif 'walker' in event.other_actor.type_id:
             actor_type = TrafficEventType.COLLISION_PEDESTRIAN
         else:
+            # self.udp_client.send("2_0_collision")
+            # print("2_0_collision")
             return
 
         collision_event = TrafficEvent(event_type=actor_type)
@@ -438,6 +461,9 @@ class CollisionTest(Criterion):
         # Number 0: static objects -> ignore it
         if event.other_actor.id != 0:
             self.last_id = event.other_actor.id
+        
+        # self.udp_client.send("2_1_collision")
+        # print("2_1_collision")
 
 
 class ActorSpeedAboveThresholdTest(Criterion):
@@ -1135,8 +1161,12 @@ class OutsideRouteLanesTest(Criterion):
 
         self.logger.debug("%s.update()[%s->%s]" % (self.__class__.__name__, self.status, new_status))
         # <<<<<================================================================
-        if self._outside_lane_active or self._wrong_lane_active:
-            self.udp_client.send('1_outside_lane')
+        if not (self._outside_lane_active or self._wrong_lane_active):
+            self.udp_client.send('1_0_outside_lane')
+            print('1_0_outside_lane')
+        else:
+            self.udp_client.send('1_1_outside_lane')
+            print('1_1_outside_lane')
         # ================================================================>>>>>
         return new_status
 
@@ -1729,7 +1759,7 @@ class RunningRedLightTest(Criterion):
                 center, waypoints = self.get_traffic_light_waypoints(_actor)
                 self._list_traffic_lights.append((_actor, center, waypoints))
         
-        self.udp_client = UDPClient(server_port = 12001)
+        self.udp_client = UDPClient(server_port = 12002)
         
 
     # pylint: disable=no-self-use
@@ -1843,9 +1873,11 @@ class RunningRedLightTest(Criterion):
         self.logger.debug("%s.update()[%s->%s]" % (self.__class__.__name__, self.status, new_status))
         # <<<<<================================================================
         if current_value == self.actual_value:
-            self.udp_client.send('0')
+            self.udp_client.send('3_0_red')
+            print('3_0_red')
         else:
-            self.udp_client.send('1')
+            self.udp_client.send('3_1_red')
+            print('3_1_red')
         # ================================================================>>>>>
         return new_status
 

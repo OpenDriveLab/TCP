@@ -151,7 +151,7 @@ class ScenarioManager(object):
             
             # Tick scenario
             self.scenario_tree.tick_once()
-            
+            print("=======================================================")
             try:
                 ego_action = self._agent()
 
