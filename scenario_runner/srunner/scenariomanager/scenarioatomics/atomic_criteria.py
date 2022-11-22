@@ -322,12 +322,22 @@ class CollisionTest(Criterion):
         self.collision_time = None
         
         self.udp_client = UDPClient(server_port = 12001)
+        self.pre_collision_len = 0
 
     def update(self):
         """
         Check collision count
         """
-        previous_collision_length = len(self.registered_collisions)
+        # <<<<<================================================================
+        if self.pre_collision_len >= len(self.registered_collisions):
+            self.udp_client.send("2_0_collision")
+            # self.pre_collision_len = len(self.registered_collisions)
+            print("2_0_collision")
+        else:
+            self.udp_client.send("2_1_collision")
+            # self.pre_collision_len = len(self.registered_collisions)
+            print("2_1_collision")
+        # ================================================================>>>>>
         
         new_status = py_trees.common.Status.RUNNING
 
@@ -354,14 +364,9 @@ class CollisionTest(Criterion):
             self.last_id = None
 
         self.logger.debug("%s.update()[%s->%s]" % (self.__class__.__name__, self.status, new_status))
-        
-        if previous_collision_length == len(self.registered_collisions):
-            self.udp_client.send("2_0_collision")
-            print("2_0_collision")
-        else:
-            self.udp_client.send("2_1_collision")
-            print("2_1_collision")
-        
+        # <<<<<================================================================
+        self.pre_collision_len = len(self.registered_collisions)
+        # ================================================================>>>>>
         return new_status
 
     def terminate(self, new_status):
@@ -489,11 +494,16 @@ class ActorSpeedAboveThresholdTest(Criterion):
         self._speed_threshold = speed_threshold
         self._below_threshold_max_time = below_threshold_max_time
         self._time_last_valid_state = None
+        
+        self.udp_client = UDPClient(server_port=12005)
 
     def update(self):
         """
         Check if the actor speed is above the speed_threshold
         """
+        # <<<<<================================================================
+        pre_block_len = len(self.list_traffic_events)
+        # ================================================================>>>>>
         new_status = py_trees.common.Status.RUNNING
 
         linear_speed = CarlaDataProvider.get_velocity(self._actor)
@@ -515,7 +525,14 @@ class ActorSpeedAboveThresholdTest(Criterion):
         if self._terminate_on_failure and (self.test_status == "FAILURE"):
             new_status = py_trees.common.Status.FAILURE
         self.logger.debug("%s.update()[%s->%s]" % (self.__class__.__name__, self.status, new_status))
-
+        
+        if pre_block_len == len(self.list_traffic_events):
+            self.udp_client.send("6_0_block")
+            print("6_0_block")
+        else:
+            self.udp_client.send("6_1_block")
+            print("6_1_block")
+        
         return new_status
 
     @staticmethod
@@ -1544,11 +1561,17 @@ class InRouteTest(Criterion):
         # Blackboard variable
         blackv = py_trees.blackboard.Blackboard()
         _ = blackv.set("InRoute", True)
+        
+        self.udp_client = UDPClient(server_port = 12004)
 
     def update(self):
         """
         Check if the actor location is within trigger region
         """
+        # <<<<<================================================================
+        current_value = self.actual_value
+        # ================================================================>>>>>
+        
         new_status = py_trees.common.Status.RUNNING
 
         location = CarlaDataProvider.get_location(self._actor)
@@ -1619,7 +1642,14 @@ class InRouteTest(Criterion):
                 new_status = py_trees.common.Status.FAILURE
 
         self.logger.debug("%s.update()[%s->%s]" % (self.__class__.__name__, self.status, new_status))
-
+        
+        if current_value == self.actual_value:
+            self.udp_client.send('5_0_inRoute')
+            print('5_0_inRoute')
+        else:
+            self.udp_client.send('5_1_inRoute')
+            print('5_1_inRoute')
+        
         return new_status
 
 
@@ -1960,6 +1990,8 @@ class RunningStopTest(Criterion):
         for _actor in all_actors:
             if 'traffic.stop' in _actor.type_id:
                 self._list_stop_signs.append(_actor)
+        
+        self.udp_client = UDPClient(server_port=12003)
 
     @staticmethod
     def point_inside_boundingbox(point, bb_center, bb_extent):
@@ -2044,6 +2076,9 @@ class RunningStopTest(Criterion):
         """
         Check if the actor is running a red light
         """
+        # <<<<<================================================================
+        current_value = self.actual_value
+        # ================================================================>>>>>
         new_status = py_trees.common.Status.RUNNING
 
         location = self._actor.get_location()
@@ -2099,7 +2134,14 @@ class RunningStopTest(Criterion):
             new_status = py_trees.common.Status.FAILURE
 
         self.logger.debug("%s.update()[%s->%s]" % (self.__class__.__name__, self.status, new_status))
-
+        
+        if current_value == self.actual_value:
+            self.udp_client.send('4_0_stop')
+            print('4_0_stop')
+        else:
+            self.udp_client.send('4_1_stop')
+            print('4_1_stop')
+            
         return new_status
 
 class UDPClient:
