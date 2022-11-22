@@ -24,9 +24,9 @@
             },
             "route_id": -1,
             "scores": {
-                "score_composed": 0.0,
+                "score_composed": 8.06321330533763,
                 "score_penalty": 1.0,
-                "score_route": 0.0
+                "score_route": 8.06321330533763
             },
             "status": "Failed"
         },
@@ -49,16 +49,16 @@
                     "vehicle_blocked": []
                 },
                 "meta": {
-                    "duration_game": 2.9500000439584255,
-                    "duration_system": 5.291648864746094,
+                    "duration_game": 28.05000041797757,
+                    "duration_system": 38.495856523513794,
                     "route_length": 972.5033469980193,
-                    "total_steps": 58
+                    "total_steps": 560
                 },
                 "route_id": "RouteScenario_0",
                 "scores": {
-                    "score_composed": 0.0,
+                    "score_composed": 8.06321330533763,
                     "score_penalty": 1.0,
-                    "score_route": 0.0
+                    "score_route": 8.06321330533763
                 },
                 "status": "Failed"
             }
@@ -88,8 +88,8 @@
         "carla_speedometer"
     ],
     "values": [
-        "0.000",
-        "0.000",
+        "8.063",
+        "8.063",
         "1.000",
         "0.000",
         "0.000",

@@ -225,75 +225,76 @@ class TCPAgent(autonomous_agent.AutonomousAgent):
         print("recv_data = %s"%recv_data)
         # =========================>
         # To do
-        # if recv_data == '1':
-        if self.step < self.config.seq_len:
-            rgb = self._im_transform(tick_data['rgb']).unsqueeze(0)
-
-            control = carla.VehicleControl()
-            control.steer = 0.0
-            control.throttle = 0.0
-            control.brake = 0.0
+        if recv_data == b'1':
+            print("dhseihgovnzbnfdblk===========")
+            if self.step < self.config.seq_len:
+                rgb = self._im_transform(tick_data['rgb']).unsqueeze(0)
+    
+                control = carla.VehicleControl()
+                control.steer = 0.0
+                control.throttle = 0.0
+                control.brake = 0.0
+                
+                return control
+    
+            gt_velocity = torch.FloatTensor([tick_data['speed']]).to('cuda', dtype=torch.float32)
+            command = tick_data['next_command']
+            if command < 0:
+                command = 4
+            command -= 1
+            assert command in [0, 1, 2, 3, 4, 5]
+            cmd_one_hot = [0] * 6
+            cmd_one_hot[command] = 1
+            cmd_one_hot = torch.tensor(cmd_one_hot).view(1, 6).to('cuda', dtype=torch.float32)
+            speed = torch.FloatTensor([float(tick_data['speed'])]).view(1,1).to('cuda', dtype=torch.float32)
+            speed = speed / 12
+            # Add an extra dimension for AI input
+            # info_show(tick_data['rgb'], 'rgb')
+            rgb = self._im_transform(tick_data['rgb']).unsqueeze(0).to('cuda', dtype=torch.float32)
+            # info_show(rgb, 'rgb')
+            tick_data['target_point'] = [torch.FloatTensor([tick_data['target_point'][0]]),
+                                            torch.FloatTensor([tick_data['target_point'][1]])]
+            target_point = torch.stack(tick_data['target_point'], dim=1).to('cuda', dtype=torch.float32)
+            state = torch.cat([speed, target_point, cmd_one_hot], 1)
             
-            return control
-
-        gt_velocity = torch.FloatTensor([tick_data['speed']]).to('cuda', dtype=torch.float32)
-        command = tick_data['next_command']
-        if command < 0:
-            command = 4
-        command -= 1
-        assert command in [0, 1, 2, 3, 4, 5]
-        cmd_one_hot = [0] * 6
-        cmd_one_hot[command] = 1
-        cmd_one_hot = torch.tensor(cmd_one_hot).view(1, 6).to('cuda', dtype=torch.float32)
-        speed = torch.FloatTensor([float(tick_data['speed'])]).view(1,1).to('cuda', dtype=torch.float32)
-        speed = speed / 12
-        # Add an extra dimension for AI input
-        info_show(tick_data['rgb'], 'rgb')
-        rgb = self._im_transform(tick_data['rgb']).unsqueeze(0).to('cuda', dtype=torch.float32)
-        info_show(rgb, 'rgb')
-        tick_data['target_point'] = [torch.FloatTensor([tick_data['target_point'][0]]),
-                                        torch.FloatTensor([tick_data['target_point'][1]])]
-        target_point = torch.stack(tick_data['target_point'], dim=1).to('cuda', dtype=torch.float32)
-        state = torch.cat([speed, target_point, cmd_one_hot], 1)
-        
-        # info_show(rgb, 'rgb')
-        pred= self.net(rgb, state, target_point)
-
-        steer_ctrl, throttle_ctrl, brake_ctrl, metadata = self.net.process_action(pred, tick_data['next_command'], gt_velocity, target_point)
-
-        steer_traj, throttle_traj, brake_traj, metadata_traj = self.net.control_pid(pred['pred_wp'], gt_velocity, target_point)
-        if brake_traj < 0.05: brake_traj = 0.0
-        if throttle_traj > brake_traj: brake_traj = 0.0
-
-        self.pid_metadata = metadata_traj
-        control = carla.VehicleControl()
-
-        if self.status == 0:
-            self.alpha = 0.3
-            self.pid_metadata['agent'] = 'traj'
-            control.steer = np.clip(self.alpha*steer_ctrl + (1-self.alpha)*steer_traj, -1, 1)
-            control.throttle = np.clip(self.alpha*throttle_ctrl + (1-self.alpha)*throttle_traj, 0, 0.75)
-            control.brake = np.clip(self.alpha*brake_ctrl + (1-self.alpha)*brake_traj, 0, 1)
+            # info_show(rgb, 'rgb')
+            pred= self.net(rgb, state, target_point)
+    
+            steer_ctrl, throttle_ctrl, brake_ctrl, metadata = self.net.process_action(pred, tick_data['next_command'], gt_velocity, target_point)
+    
+            steer_traj, throttle_traj, brake_traj, metadata_traj = self.net.control_pid(pred['pred_wp'], gt_velocity, target_point)
+            if brake_traj < 0.05: brake_traj = 0.0
+            if throttle_traj > brake_traj: brake_traj = 0.0
+    
+            self.pid_metadata = metadata_traj
+            control = carla.VehicleControl()
+    
+            if self.status == 0:
+                self.alpha = 0.3
+                self.pid_metadata['agent'] = 'traj'
+                control.steer = np.clip(self.alpha*steer_ctrl + (1-self.alpha)*steer_traj, -1, 1)
+                control.throttle = np.clip(self.alpha*throttle_ctrl + (1-self.alpha)*throttle_traj, 0, 0.75)
+                control.brake = np.clip(self.alpha*brake_ctrl + (1-self.alpha)*brake_traj, 0, 1)
+            else:
+                self.alpha = 0.3
+                self.pid_metadata['agent'] = 'ctrl'
+                control.steer = np.clip(self.alpha*steer_traj + (1-self.alpha)*steer_ctrl, -1, 1)
+                control.throttle = np.clip(self.alpha*throttle_traj + (1-self.alpha)*throttle_ctrl, 0, 0.75)
+                control.brake = np.clip(self.alpha*brake_traj + (1-self.alpha)*brake_ctrl, 0, 1)
+    
+    
+            self.pid_metadata['steer_ctrl'] = float(steer_ctrl)
+            self.pid_metadata['steer_traj'] = float(steer_traj)
+            self.pid_metadata['throttle_ctrl'] = float(throttle_ctrl)
+            self.pid_metadata['throttle_traj'] = float(throttle_traj)
+            self.pid_metadata['brake_ctrl'] = float(brake_ctrl)
+            self.pid_metadata['brake_traj'] = float(brake_traj)
+    
+            if control.brake > 0.5:
+                control.throttle = float(0)
         else:
-            self.alpha = 0.3
-            self.pid_metadata['agent'] = 'ctrl'
-            control.steer = np.clip(self.alpha*steer_traj + (1-self.alpha)*steer_ctrl, -1, 1)
-            control.throttle = np.clip(self.alpha*throttle_traj + (1-self.alpha)*throttle_ctrl, 0, 0.75)
-            control.brake = np.clip(self.alpha*brake_traj + (1-self.alpha)*brake_ctrl, 0, 1)
-
-
-        self.pid_metadata['steer_ctrl'] = float(steer_ctrl)
-        self.pid_metadata['steer_traj'] = float(steer_traj)
-        self.pid_metadata['throttle_ctrl'] = float(throttle_ctrl)
-        self.pid_metadata['throttle_traj'] = float(throttle_traj)
-        self.pid_metadata['brake_ctrl'] = float(brake_ctrl)
-        self.pid_metadata['brake_traj'] = float(brake_traj)
-
-        if control.brake > 0.5:
-            control.throttle = float(0)
-        # else:
-        #     control = self.pre_control
-        #     self.pid_metadata = self.pre_pid_metadata
+            control = self.pre_control
+            self.pid_metadata = self.pre_pid_metadata
             
             
         if len(self.last_steers) >= 20:
