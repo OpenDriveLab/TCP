@@ -28,7 +28,7 @@ export SCENARIOS=leaderboard/data/scenarios/all_towns_traffic_scenarios.json
 # VAE_TCP
 export PATH_VAE_MODEL=/home/eidos/Workspace/Playground/0_storage/TCP_VAE_model/VAE_TCP/VAE_TCP_training_2022-11-11_16-19-03/final_model
 # Gym
-#export FIFO_PATH=/home/eidos/Workspace/GitKraken_ws/meta_driving/fifo_space
+export FIFO_PATH=/home/eidos/Workspace/GitKraken_ws/meta_driving/fifo_space
 
 python3 ${LEADERBOARD_ROOT}/leaderboard/leaderboard_evaluator.py \
 --scenarios=${SCENARIOS}  \
