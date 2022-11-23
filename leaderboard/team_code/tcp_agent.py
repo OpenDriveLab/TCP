@@ -103,6 +103,7 @@ class TCPAgent(autonomous_agent.AutonomousAgent):
         
         # <====================================================================
         if PATH_VAE_MODEL is not None:
+            # Block
             self.fifo_client = FIFOInstance('client', FIFO_PATH)
             self.vae_model = AutoModel_Ex.load_from_folder(PATH_VAE_MODEL)
             self.vae_model.to('cuda')
@@ -226,7 +227,6 @@ class TCPAgent(autonomous_agent.AutonomousAgent):
         # =========================>
         # To do
         if recv_data == b'1':
-            print("dhseihgovnzbnfdblk===========")
             if self.step < self.config.seq_len:
                 rgb = self._im_transform(tick_data['rgb']).unsqueeze(0)
     
