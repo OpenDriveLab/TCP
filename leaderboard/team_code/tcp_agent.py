@@ -339,11 +339,13 @@ class TCPAgent(autonomous_agent.AutonomousAgent):
         torch.cuda.empty_cache()
     
     def VAE_process(self, wide_rgb):
-        # Construct as a batch
-        wide_rgb = np.expand_dims(wide_rgb, axis = 0)
-        # Normalize
-        wide_rgb = torch.tensor(wide_rgb).permute(0,3,1,2).to('cuda', dtype=torch.float)/127.5 - 1
-        # narr_array = np.expand_dims(np.transpose(narr_array, (2,0,1)), axis = 0)
+        # # Construct as a batch
+        # wide_rgb = np.expand_dims(wide_rgb, axis = 0)
+        # # Normalize
+        # wide_rgb = torch.tensor(wide_rgb).permute(0,3,1,2).to('cuda', dtype=torch.float)/127.5 - 1
+        # # narr_array = np.expand_dims(np.transpose(narr_array, (2,0,1)), axis = 0)
+        # normalize (0, 255) to (-2.x, 2.x)
+        wide_rgb = self._im_transform(wide_rgb).unsqueeze(0).to('cuda', dtype=torch.float32)
         
         encoder_output = self.vae_model.encoder(wide_rgb)
         mu, log_var = encoder_output.embedding, encoder_output.log_covariance
