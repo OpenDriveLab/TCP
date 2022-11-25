@@ -113,6 +113,7 @@ class TCPAgent(autonomous_agent.AutonomousAgent):
             self.pre_control.throttle = 0.0
             self.pre_control.brake = 0.0
             self.pre_pid_metadata = None
+            self.init_count = 0
         # ====================================================================>
 
     def _init(self):
@@ -225,8 +226,8 @@ class TCPAgent(autonomous_agent.AutonomousAgent):
         recv_data = self.fifo_client.read()
         print("recv_data = %s"%recv_data)
         # =========================>
-        # To do
-        if recv_data == b'1':
+        # self.init_count trigger twice sending at the beginning
+        if recv_data == b'1' or self.init_count < 3:
             if self.step < self.config.seq_len:
                 rgb = self._im_transform(tick_data['rgb']).unsqueeze(0)
     
@@ -292,6 +293,9 @@ class TCPAgent(autonomous_agent.AutonomousAgent):
     
             if control.brake > 0.5:
                 control.throttle = float(0)
+                
+            if self.init_count < 3:
+                self.init_count = self.init_count + 1
         else:
             control = self.pre_control
             self.pid_metadata = self.pre_pid_metadata
