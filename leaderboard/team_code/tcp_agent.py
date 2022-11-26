@@ -325,6 +325,11 @@ class TCPAgent(autonomous_agent.AutonomousAgent):
         self.pre_control = control
         self.pre_pid_metadata =  self.pid_metadata
         
+        # For testing
+        # control.steer = 0.0
+        # control.throttle = 1.0
+        # control.brake = 0.0
+        
         return control
 
     def save(self, tick_data):
@@ -364,3 +369,4 @@ class TCPAgent(autonomous_agent.AutonomousAgent):
         state = np.vstack((mu, std))
         print(state.shape)
         return state
+    

@@ -1145,7 +1145,7 @@ class OutsideRouteLanesTest(Criterion):
             return new_status
 
         # 1) Check if outside route lanes
-        self._is_outside_driving_lanes(location)
+        offset_distance = self._is_outside_driving_lanes(location)
         self._is_at_wrong_lane(location)
 
         if self._outside_lane_active or self._wrong_lane_active:
@@ -1179,11 +1179,11 @@ class OutsideRouteLanesTest(Criterion):
         self.logger.debug("%s.update()[%s->%s]" % (self.__class__.__name__, self.status, new_status))
         # <<<<<================================================================
         if not (self._outside_lane_active or self._wrong_lane_active):
-            self.udp_client.send('1_0_outside_lane')
-            print('1_0_outside_lane')
+            self.udp_client.send('1_0_outside_lane_%s'%(str(offset_distance)))
+            print('1_0_outside_lane_%s'%(str(offset_distance)))
         else:
-            self.udp_client.send('1_1_outside_lane')
-            print('1_1_outside_lane')
+            self.udp_client.send('1_1_outside_lane_%s'%(str(offset_distance)))
+            print('1_1_outside_lane_%s'%(str(offset_distance)))
         # ================================================================>>>>>
         return new_status
 
@@ -1209,6 +1209,8 @@ class OutsideRouteLanesTest(Criterion):
             lane_width = current_driving_wp.lane_width
 
         self._outside_lane_active = bool(distance > (lane_width / 2 + self.ALLOWED_OUT_DISTANCE))
+        
+        return distance
 
     def _is_at_wrong_lane(self, location):
         """
@@ -1570,6 +1572,7 @@ class InRouteTest(Criterion):
         """
         # <<<<<================================================================
         current_value = self.actual_value
+        new_dist = 0
         # ================================================================>>>>>
         
         new_status = py_trees.common.Status.RUNNING
@@ -1643,12 +1646,14 @@ class InRouteTest(Criterion):
 
         self.logger.debug("%s.update()[%s->%s]" % (self.__class__.__name__, self.status, new_status))
         
+        distance_str = str(self._out_route_distance)
+        new_dist_str = str(new_dist)
         if current_value == self.actual_value:
-            self.udp_client.send('5_0_inRoute')
-            print('5_0_inRoute')
+            self.udp_client.send('5_0_inRoute_%s_%s'%(distance_str, new_dist_str))
+            print('5_0_inRoute_%s_%s'%(distance_str, new_dist_str))
         else:
-            self.udp_client.send('5_1_inRoute')
-            print('5_1_inRoute')
+            self.udp_client.send('5_1_inRoute_%s_%s'%(distance_str, new_dist_str))
+            print('5_1_inRoute_%s_%s'%(distance_str, new_dist_str))
         
         return new_status
 
