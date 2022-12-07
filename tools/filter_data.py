@@ -45,7 +45,7 @@ if __name__ == '__main__':
 			records = records["_checkpoint"]["records"]
 			for index, record in enumerate(records):
 				route_data_folder = os.path.join(data_folder, sub_folders[index])
-				total_length = len(os.listdir(os.path.join(route_data_folder, "meta")))
+				total_length = len(os.listdir(os.path.join(route_data_folder, "measurements")))
 				if record["scores"]["score_composed"] >= 100:
 					continue
 				# timeout or blocked, remove the last ones where the vehicle stops
@@ -53,7 +53,7 @@ if __name__ == '__main__':
 					len(record["infractions"]["vehicle_blocked"]) > 0:
 						stop_index = 0
 						for i in range(total_length-1, 0, -1):
-							with open(os.path.join(route_data_folder, "meta", str(i).zfill(4)) + ".json", 'r') as mf:
+							with open(os.path.join(route_data_folder, "measurements", str(i).zfill(4)) + ".json", 'r') as mf:
 								speed = json.load(mf)["speed"]
 								if speed > 0.1:
 									stop_index = i
