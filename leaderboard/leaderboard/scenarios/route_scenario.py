@@ -325,25 +325,9 @@ class RouteScenario(BasicScenario):
 
 			return False
 
-		# def select_scenario(list_scenarios):
-		#     # priority to the scenarios with higher number: 10 has priority over 9, etc.
-		#     higher_id = -1
-		#     selected_scenario = None
-		#     for scenario in list_scenarios:
-		#         try:
-		#             scenario_number = int(scenario['name'].split('Scenario')[1])
-		#         except:
-		#             scenario_number = -1
-
-		#         if scenario_number >= higher_id:
-		#             higher_id = scenario_number
-		#             selected_scenario = scenario
-
-		#     return selected_scenario
-
-
 		def select_scenario(list_scenarios):
 			# priority to the scenarios with higher number: 10 has priority over 9, etc.
+			higher_id = -1
 			selected_scenario = None
 			for scenario in list_scenarios:
 				try:
@@ -351,13 +335,29 @@ class RouteScenario(BasicScenario):
 				except:
 					scenario_number = -1
 
-				if scenario_number == 3:
+				if scenario_number >= higher_id:
+					higher_id = scenario_number
 					selected_scenario = scenario
-					break
-			if selected_scenario is None:
-				return rgn.choice(list_scenarios)
 
 			return selected_scenario
+
+
+		# def select_scenario(list_scenarios):
+		# 	# priority to the scenarios with higher number: 10 has priority over 9, etc.
+		# 	selected_scenario = None
+		# 	for scenario in list_scenarios:
+		# 		try:
+		# 			scenario_number = int(scenario['name'].split('Scenario')[1])
+		# 		except:
+		# 			scenario_number = -1
+
+		# 		if scenario_number == 3:
+		# 			selected_scenario = scenario
+		# 			break
+		# 	if selected_scenario is None:
+		# 		return rgn.choice(list_scenarios)
+
+		# 	return selected_scenario
 
 		def select_scenario_randomly(list_scenarios):
 			# randomly select a scenario
