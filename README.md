@@ -45,7 +45,7 @@ export PYTHONPATH=$PYTHONPATH:PATH_TO_TCP
 
 ## Dataset
 
-Download our dataset through [GoogleDrive](https://drive.google.com/file/d/1A6k0KpVHs5eSaqunzbRQR-p0b-915O9R/view?usp=sharing) or BaiduYun. The total size of our dataset is aroung 115G, make sure you have enough space.
+Download our dataset through [GoogleDrive](https://drive.google.com/file/d/1A6k0KpVHs5eSaqunzbRQR-p0b-915O9R/view?usp=sharing) or [BaiduYun](https://pan.baidu.com/s/11xBZwAWQ3WxQXecuuPoexQ) (提取码 8174). The total size of our dataset is aroung 115G, make sure you have enough space.
 
 ## Training
 First, set the dataset path in ``TCP/config.py``.
