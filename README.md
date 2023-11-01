@@ -3,7 +3,7 @@
 ![teaser](assets/teaser_.png)
 
 > Trajectory-guided Control Prediction for End-to-end Autonomous Driving: A Simple yet Strong Baseline  
-> Penghao Wu*, [Xiaosong Jia*](https://jiaxiaosong1002.github.io/), Li Chen*, [Junchi Yan](https://thinklab.sjtu.edu.cn/), [Hongyang Li](https://lihongyang.info/), [Yu Qiao](http://mmlab.siat.ac.cn/yuqiao/)    
+> [Penghao Wu*](https://scholar.google.com/citations?user=9mssd5EAAAAJ&hl=en), [Xiaosong Jia*](https://jiaxiaosong1002.github.io/), [Li Chen*](https://scholar.google.com/citations?user=ulZxvY0AAAAJ&hl=en), [Junchi Yan](https://thinklab.sjtu.edu.cn/), [Hongyang Li](https://lihongyang.info/), [Yu Qiao](http://mmlab.siat.ac.cn/yuqiao/)    
 >  - [arXiv Paper](https://arxiv.org/abs/2206.08129), NeurIPS 2022
 >  - [Blog in Chinese](https://zhuanlan.zhihu.com/p/532665469)
 
